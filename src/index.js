@@ -14,8 +14,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <>
  <h1 className="headingStyle">Whtass app</h1>
- <p className="para">how is going : {stringName} </p>
- <p>here will print current year : {currDay +"-"+currMonth +"-"+currYear}</p>
+    <div className="card">
+        <h2 className="cardheading">This is Cardheading</h2>
+        <p className="descrip">how is going : {stringName} </p>
+        <p className="cardFooter">here will print current year : {currDay +"-"+currMonth +"-"+currYear}</p>
+
+    </div>
+
  </>
 );
 

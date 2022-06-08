@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .headingStyle
 {
     background-color: darkorange;
@@ -12,4 +17,32 @@
 {
     font-size: 2rem;
     text-align: center;
+}
+
+.card{
+    background: cornflowerblue;
+    box-shadow: 2px 4px 4px gray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 390px;
+    display: inline-block;
+
+}
+
+.cardheading
+{
+    text-align: center;
+    margin-bottom: 5px;
+    
+}
+
+.descrip{
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.cardFooter{
+text-align: center;
+font-weight: bold;
 }
