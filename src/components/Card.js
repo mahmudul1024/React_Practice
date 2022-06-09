@@ -8,11 +8,17 @@ const date= new Date(); //obect created of type Date
 const currYear=date.getFullYear();
 const currMonth=date.getMonth();
 const currDay=date.getDay();
+
+
 function CardComponent(props)
 {
+  const {textHeading, desc}=props;
+  
+ 
+
   return  <div className="card">
-  <h2 className="cardheading">{props.textHeading}</h2>
-  <p className="descrip">how is going : {props.desc} </p>
+  <h2 className="cardheading">{textHeading}</h2>
+  <p className="descrip">how is going o : {desc} </p>
   <p className="cardFooter">here will print current year : {currDay +"-"+currMonth +"-"+currYear}</p>
    </div>
   
