@@ -5,8 +5,8 @@ function App()
 {
     return <>
     <h1 className="headingStyle">How are you</h1>;
-    <CardComponent />
-    <CardComponent />
+    <CardComponent textHeading="this is first heading" desc="This is desc_1"/>
+    <CardComponent textHeading="this is second heading" desc="This is desc_2" />
 
     </>
 }
