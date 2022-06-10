@@ -1,10 +1,11 @@
 import React from 'react'
-import State from './State'
+
+import Condi_Rendering from './components/Index'
 
 function App() {
   return (
     <div >
-    <State />
+    <Condi_Rendering />
     </div>
   )
 }
