@@ -1,35 +1,31 @@
 import React, { Component } from 'react'
-import HomePage from './HomePage'
-import Login from './Login'
 
-
-export default class Condi_Rendering extends Component {
+export default class Event_handleClass extends Component {
  
     constructor(props) {
       super(props)
     
       this.state = {
-         islogedin: false
+         changedValue : ''
       }
     }
     
+    
+    
+    handledOnchanged=(e)=>{
+       this.setState({changedValue: e.target.value},()=>{
+        console.log(this.state.changedValue)
+
+       }) 
+    }
  
  
     render() {
-    let element;
-    // if(this.state.islogedin){
-    //     element= <HomePage />
-    // }
-    // else{
-    
-    //         element= <Login />
-    //     }
-
-    // element= this.state.islogedin ? <HomePage /> : < Login />;
-        return  <div>
-        { this.state.islogedin ? <HomePage /> : < Login />}
-        </div>
-
-    }
-  
+    return (
+      <div>
+      <input type={"text"} onChange={this.handledOnchanged}></input>
+      <p >{this.state.changedValue}</p>
+      </div>
+    )
+  }
 }
