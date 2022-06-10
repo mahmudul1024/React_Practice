@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactBootstrap from './components/ReactBootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-    
-   
-export default function App()
-{
-    return <>
-<ReactBootstrap ></ReactBootstrap>
+import React from 'react'
+import State from './State'
 
-    </>
+function App() {
+  return (
+    <div >
+    <State />
+    </div>
+  )
 }
 
+export default App
