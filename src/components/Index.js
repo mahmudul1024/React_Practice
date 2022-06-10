@@ -1,30 +1,25 @@
 import React, { Component } from 'react'
 
-export default class Event_handleClass extends Component {
- 
+export default class Event_handler_binding extends Component {
+  
     constructor(props) {
       super(props)
     
       this.state = {
-         changedValue : ''
+         count : 0
       }
+      this.Increasing=this.Increasing.bind(this)
     }
     
-    
-    
-    handledOnchanged=(e)=>{
-       this.setState({changedValue: e.target.value},()=>{
-        console.log(this.state.changedValue)
-
-       }) 
+    Increasing=()=>{
+       this.setState({ count : this.state.count+1})
     }
- 
- 
+  
     render() {
     return (
       <div>
-      <input type={"text"} onChange={this.handledOnchanged}></input>
-      <p >{this.state.changedValue}</p>
+      <h1>{this.state.count}</h1>
+      <button onClick={this.Increasing}>Increase</button>
       </div>
     )
   }

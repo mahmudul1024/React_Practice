@@ -1,10 +1,10 @@
 import React from 'react'
-import Event_handleClass from './components/Index'
+import Event_handler_binding from './components/Index'
 
 function App() {
   return (
     <div >
-    <Event_handleClass />
+   < Event_handler_binding />
     </div>
   )
 }
