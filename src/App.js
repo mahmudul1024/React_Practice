@@ -1,10 +1,10 @@
 import React from 'react'
-import Event_handler_binding from './components/Index'
+import Hooks_usestate_2 from './components/Hooks_usestate_2'
 
 function App() {
   return (
     <div >
-   < Event_handler_binding />
+   < Hooks_usestate_2 />
     </div>
   )
 }
