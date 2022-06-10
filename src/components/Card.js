@@ -14,8 +14,6 @@ function CardComponent(props)
 {
   const {textHeading, desc}=props;
   
- 
-
   return  <div className="card">
   <h2 className="cardheading">{textHeading}</h2>
   <p className="descrip">how is going o : {desc} </p>
