@@ -3,34 +3,46 @@ import style from './Form.module.css'
 export default function Forms() {
 
 
-const [Name,setName]=useState('')
-const [Email,setEmail]=useState('')
-const [Pass,setPass]=useState('')
+
+const [user,setUser]=useState({Name:'',Email:'',Pass:''})
+//Destructuring
+const {Name,Email,Pass}=user
 
 
 
 
-const handledNameChange=(e)=>{
-  setName(e.target.value)
-}
 
-const handledEmailChange=(e)=>{
-    setEmail(e.target.value)
-}
 
-const handledPassChange=(e)=>{
-    setPass(e.target.value)
+
+const Single_Handler=(e)=>{
+    const filename=e.target.name;
+    
+
+
+    
+    if(filename==="name"){
+        setUser({Name:e.target.value,Email,Pass})
+
+    }
+
+    if(filename==="Email"){
+        setUser({Name,Email:e.target.value,Pass})
+    }
+
+    if(filename==="Password"){
+        setUser({Name,Email,Pass:e.target.value})
+    }
+
+//simplified use spread operator
+
+
 }
 
 
 const handledSubmit=(e)=>{
     console.log("form is submitted")
-    let userinfo={
-        Name ,  // Name :Name
-        Email,  //Email : Email
-        Pass    //Pass : Pass
-    }
-    console.log(userinfo)
+    
+    console.log(user)
 
     e.preventDefault()
 }
@@ -42,18 +54,18 @@ const handledSubmit=(e)=>{
       <form action='' onSubmit={handledSubmit}>
       <div className={style.formGroup}>
       <label htmlFor='Name'>Name :</label>
-      <input type="text" name='name' id='name' value={Name} onChange={handledNameChange} required ></input>
+      <input type="text" name='name' id='name' value={Name} onChange={Single_Handler} required ></input>
       </div>
 
       <div className={style.formGroup}>
       <label htmlFor='Email'>Email :</label>
-      <input type="text" name='Email' id='Email' value={Email} onChange={handledEmailChange} required ></input>
+      <input type="text" name='Email' id='Email' value={Email} onChange={Single_Handler} required ></input>
       </div>
 
 
       <div className={style.formGroup}>
       <label htmlFor='Name'>Password :</label>
-      <input type="text" name='Password' id='Password' value={Pass} onChange={handledPassChange} required ></input>
+      <input type="text" name='Password' id='Password' value={Pass} onChange={Single_Handler} required ></input>
       </div>
 
       <div >
