@@ -1,25 +1,43 @@
 import React,{useState} from 'react'
+import style from './Newtodo.module.css'
 
-const NewTodo = (props) => {
-const [todo,setTodo]=useState('')
+const NewTodo = () => {
+//we will change this variable todo such as todo.title
+    const [todo,setTodo]=useState({title:'',desc:'' })
+    const {title,desc}=todo 
 
-const handledInputChange=(e)=>{
-    setTodo(e.target.value)
+const handleChange=(e)=>{
+const name=e.target.name
+setTodo((oldTodo)=>{
+    return {...oldTodo,[name]:e.target.value}
+})
 }
-const handledSubmit=(e)=>{
-    e.preventDefault()
-    props.OnTodo(todo)
+
+
+const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(todo)
+    setTodo({title:"" ,desc:""})
+
 }
 
   return (
-    <form onSubmit={handledSubmit}>
-<label htmlFor='todo'>New todo  :</label>
-<input type={'text'} id="todo" name='todo' 
-            value={todo} onChange={handledInputChange} ></input>
+    <form className={style.form} onSubmit={handleSubmit}>
+<div className={style["form-field"]}>
+    <label htmlFor='title'>Title :</label>
+    <input type="text" id="title"
+     name='title' value={title} onChange={handleChange}></input>
+</div>
+
+<div className={style["form-field"]}>
+    <label htmlFor='desc'>Description :</label>
+    <textarea type="text" id="desc" 
+    name='desc' value={desc} onChange={handleChange}></textarea>
+</div>
+
+<button type='submit' >Add todo</button>
 
 
-   <button>Add Todo</button>
-   
     </form>
   )
 }

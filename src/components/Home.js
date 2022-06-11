@@ -1,21 +1,21 @@
 import React,{useState} from 'react'
-import NewTodo from './NewTodo';
-import Todos from './Todos';
+import Todos from './Todos'
+import style from './Home.module.css'
+import NewTodo from './NewTodo' 
 
-const dummytodos=["todo_1", "todo_2" ]
+
+//untill 30:22
+
 
 const Home = () => {
-const [todos,setTodos]=useState(dummytodos)
 
-const handleNewtodo=(newtodo)=>{
-  setTodos([...todos,newtodo])
-}
-
+const [todos ,setTodos]=useState([])
 
   return (
-    <div>
-    <NewTodo   OnTodo={handleNewtodo}></NewTodo>
-     <Todos todos={todos}/>
+    <div className={style.container}>
+    <h1 style={{color:"white"}}>Todo App</h1>
+    <NewTodo></NewTodo>
+    <Todos todos={todos}></Todos>  
     </div>
   )
 }
