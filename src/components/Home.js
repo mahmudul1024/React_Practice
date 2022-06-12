@@ -1,41 +1,60 @@
-import React,{useState} from 'react'
+import React ,{useState} from 'react'
 import Todos from './Todos'
-import style from './Home.module.css'
-import NewTodo from './NewTodo' 
+import Style from './Home.module.css'
+import Newtodo from './NewTodo'
 import { v4 as uuidv4 } from 'uuid';
 
-
-//untill 30:22
+// remains all the todo list 
 
 
 const Home = () => {
 
-const [currTodos ,setTodos]=useState([])
+  const [transferedTodos, setTransferedTodo]=useState([])
 
-const handleAddTodo=(todo)=>{
+// console.log("here will be transferedTodos")
+// console.log(transferedTodos)
 
-setTodos((prevTodos)=>{
-  return [...prevTodos,{id:uuidv4(), todo}]
-})
-console.log(currTodos)
+const handleTransfer=(e)=>{
+  console.log("Hi");
+  
+    setTransferedTodo((prevTodos )=>{
+      return [...prevTodos,{id:uuidv4(), e}]
+    })
+
+ console.log(transferedTodos)
+
 }
 
-const handleRemovetodo=(id)=>{
+// const handleRemoveTodo=(id)=>{
+//   const filteredTodos=transferedTodos.filter((tran)=>
+//      tran.id !== id)
+//     setTransferedTodo(filteredTodos)
   
-    setTodos((previousTodos)=>{
-const filteredTodos=previousTodos.filter((todo)=> todo.id != id)
-      return filteredTodos
+// }
+const handleRemoveTodo=(id)=>{
+  
+    setTransferedTodo((previousTodos)=>{
+      const filteredTodos=previousTodos.filter((tran)=>
+     tran.id !== id)
+     return filteredTodos;
     })
+  
 }
 
 
 
   return (
-    <div className={style.container}>
-    <h1 style={{color:"white"}}>Scheduling App</h1>
-    {/* receive todo from child to parent when clicked */}
-    <NewTodo onAddTodo={handleAddTodo}></NewTodo>
-    <Todos todos={currTodos} onRemoveTodo={handleRemovetodo}></Todos>  
+    <div className={Style.container}>
+    {/* <h1 >{dummies[0].title}</h1> */}
+    <h1 style={{color : "wheat"}}>TODO APP</h1>
+    {/* parent er moddhe child print */}
+    <Newtodo onTransfer={handleTransfer} ></Newtodo>
+
+    {/* child NewTodo theke data props er maddhome parents er State Variable
+    transferedTodos a niye ashte hobe */}
+
+    <Todos todos_prop={transferedTodos} 
+    onRemoveTodo={handleRemoveTodo}></Todos>
     </div>
   )
 }

@@ -1,21 +1,23 @@
 import React from 'react'
 import Todo from './Todo'
-import style from './Todo.module.css'
 
-//props used to pass from parent component to child component
+import Style_todos from './Todo.module.css'
+
+// rule :props calling should be on curly brackets
+
 const Todos = (props) => {
 
-    console.log(props.todos)
+  
   return (
-    
-    <section className={style.todos}>
-      {
-        props.todos.map((todo)=>
-            <Todo todo={todo.todo} key={todo.id} 
-            id={todo.id} onRemoveItem={props.onRemoveTodo}></Todo>
-        )
-      }
+    <section className={Style_todos.todos}>
+  {props.todos_prop.map((todo) =>
+  
+ 
+<Todo single_todo_props={todo.e} key={todo.id} id={todo.id} 
+onRemovetodo_2={props.onRemoveTodo}></Todo>
 
+)
+}   
     </section>
   )
 }

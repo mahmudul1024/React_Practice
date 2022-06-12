@@ -1,31 +1,28 @@
 import React from 'react'
-import style from './Todo_final.module.css'
+import Style_Todo from './Todo_final.module.css'
 
 const Todo = (props) => {
-const {title,desc}=props.todo  ;
-const {id}=props;
-
-
-const handlebtn=(id)=>{
-    props.onRemoveItem(id)
+    const {title ,desc}=props.single_todo_props
+    const {id}=props
+  
+    
+const handleDelete=(id)=>{
+ props.onRemovetodo_2(id)
 }
+  
+  return (
+    <article className={Style_Todo.todo}>
+      <div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
 
+      </div>
 
-
-    return (
-    <article className={style.todo}>
-    <div>
-    <h3>{title}</h3>
-    <h3>{desc}</h3>
-    </div>
- 
-    <div>
-        <button className={style.btn} onClick={()=>{
-            handlebtn(id)
-        }}>
-            <i className='fa fa-trash fa-2x'></i>
-        </button>
-    </div>
+      <button className={Style_Todo.btn} onClick={()=>{
+        handleDelete(id)
+      }}>
+        <i className="fa fa-trash 2x"></i>
+      </button>
     </article>
   )
 }
