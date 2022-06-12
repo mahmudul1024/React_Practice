@@ -1,12 +1,12 @@
-import React from 'react'
-import Home from './components/Home'
+import React,{useState} from 'react'
+import FAQS from './components/FAQS'
 
 
 function App() {
 
   return (
     <div >
-    <Home />
+    <FAQS />
     </div>
   )
 }
