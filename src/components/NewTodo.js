@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import style from './Newtodo.module.css'
 
-const NewTodo = () => {
+const NewTodo = (props) => {
 //we will change this variable todo such as todo.title
     const [todo,setTodo]=useState({title:'',desc:'' })
     const {title,desc}=todo 
@@ -16,7 +16,8 @@ setTodo((oldTodo)=>{
 
 const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(todo)
+    props.onAddTodo(todo)
+
     setTodo({title:"" ,desc:""})
 
 }
@@ -24,7 +25,7 @@ const handleSubmit=(e)=>{
   return (
     <form className={style.form} onSubmit={handleSubmit}>
 <div className={style["form-field"]}>
-    <label htmlFor='title'>Title :</label>
+    <label htmlFor='title'>Schedule :</label>
     <input type="text" id="title"
      name='title' value={title} onChange={handleChange}></input>
 </div>
@@ -35,7 +36,7 @@ const handleSubmit=(e)=>{
     name='desc' value={desc} onChange={handleChange}></textarea>
 </div>
 
-<button type='submit' >Add todo</button>
+<button type='submit'>Add Schedule</button>
 
 
     </form>
