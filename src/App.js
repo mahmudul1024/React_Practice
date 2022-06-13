@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
-import FAQS from './components/FAQS'
+import UseEffect_Example from './components/UseEffect_Example'
 
 
 function App() {
 
   return (
     <div >
-    <FAQS />
+    <UseEffect_Example></UseEffect_Example>
     </div>
   )
 }
