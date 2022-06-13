@@ -1,12 +1,11 @@
-import React,{useState} from 'react'
-import UseEffect_Example from './components/UseEffect_Example'
-
+import React from 'react'
+import Data_fetch from './components/Data_fetch'
 
 function App() {
 
   return (
     <div >
-    <UseEffect_Example></UseEffect_Example>
+    <Data_fetch></Data_fetch>
     </div>
   )
 }
