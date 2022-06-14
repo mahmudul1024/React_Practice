@@ -1,12 +1,11 @@
 import React from 'react'
-import Fragm from './components/Fragm'
-
+import Table from './components/Table'
 function App() {
 
   return (
     < div>
   
-    <Fragm></Fragm>
+    <Table></Table>
 
     </div>
   )

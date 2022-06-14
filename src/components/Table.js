@@ -1,10 +1,13 @@
 import React from 'react'
+import Culumn from './Culumn'
 
 const Table = () => {
   return (
-    <div>
-      
-    </div>
+    <table>
+      <tr>
+        <Culumn></Culumn>
+      </tr>
+    </table>
   )
 }
 
