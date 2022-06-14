@@ -1,12 +1,13 @@
 import React from 'react'
-import Data_fetch from './components/Data_fetch'
+import Main from './components/Main'
 
 function App() {
 
   return (
-    <div >
-    <Data_fetch></Data_fetch>
-    </div>
+    < >
+    
+<Main></Main>
+    </>
   )
 }
 
