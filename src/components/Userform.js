@@ -1,57 +1,48 @@
-import React, { Component, createRef } from 'react'
-//Ref helps us to directly manipulate DOM
-//Ref er maddhome amra input field er value pete pari
-//chaile style change korte pari
-export default class Userform extends Component {
+import React, { useRef } from 'react'
 
-//Constructor
+const Userform = () => {
 
-constructor(props) {
-  super(props)
-  //1.create Ref
-  this.UsernameRef=createRef()
+// 1..create Ref by hook
+const userNameRef=useRef();
+const userPasswordRef=useRef();
 
-  this.state = {
-     
-  }
-}
+const handleFormSubmit=(event)=>{
+event.preventDefault();
 
-//access form attribute by handlesubmit 
-
-handleSubmit=(event)=>{
-event.preventDefault()
-console.log(this.UsernameRef.current)
-//3..here we accesed finally the dom element
-console.log(this.UsernameRef.current.value)
-//3..here we accesed finally the dom element
-console.log(this.UsernameRef.current.style.backgroundColor="red")
-console.log(this.UsernameRef.current.style.color="white")
+//directly amra dom k access korte parchi without help of onClick or onChange 
+//esober sahojjo chara ..amra control korchi na ..directly access korchi Ref hook er maddhome
+console.log("submitted")
+const userName=userNameRef.current.value
+const pass=userPasswordRef.current.value
+console.log({userName})
+console.log({pass})
+userNameRef.current.style.color="red"
 
 
 }
 
-
-
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-       
-        <div className='form-field'>
-        <label htmlFor='userName'>Username</label>
-        {/* 2.. ekhane link kore dite hobe ref k */}
-        <input type="text" id='userName' ref={this.UsernameRef}></input>
+  return (
+    <>
+    <form onSubmit={handleFormSubmit}>
+      <div>
+      <label htmlFor='userName'>UserName</label>
+      {/*  2..link userPasswordRef */}
+        <input type="text" id ="userName" ref={userNameRef}></input>
         </div>
+        <div>
+      <label htmlFor='pass'>Password</label>
+      {/*  2..link userPasswordRef */}
+        <input type="password" id ="pass" ref={userPasswordRef}></input>
 
-        <div className='form-field'>
-        <label htmlFor='password'>Password</label>
-        <input type="password" id='password'></input>
         </div>
-
         <button type='submit'>Register</button>
 
+    </form>
 
-      </form>
-    )
-  }
+    
+
+    </>
+  )
 }
+
+export default Userform
