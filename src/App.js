@@ -1,13 +1,14 @@
 import React from 'react'
-import Main from './components/Main'
+import Fragm from './components/Fragm'
 
 function App() {
 
   return (
-    < >
-    
-<Main></Main>
-    </>
+    < div>
+  
+    <Fragm></Fragm>
+
+    </div>
   )
 }
 
