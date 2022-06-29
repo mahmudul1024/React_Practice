@@ -1,11 +1,7 @@
 import React from 'react'
-import Usereducer from './components/Usereducer'
+import Component_1 from './components/Component_1'
 
-//books ,modalText, ismodalOpen --3 states
-//Add books -modaltext (after adding show a message)
-//remove books -modaltext  (after removing show a message)
 
-//we will later use a single state by usereducer
 
 
 
@@ -13,7 +9,7 @@ function App() {
 
   return (
     < div>
-    <Usereducer></Usereducer>
+    <Component_1></Component_1>
     
     </div>
   )
