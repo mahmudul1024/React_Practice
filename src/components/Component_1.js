@@ -1,6 +1,8 @@
 import React ,{useState} from 'react'
 import Component_2 from './Component_2'
-import Component_4 from './Component_4'
+import { UserContext } from './UseerContext'
+
+
 
 //we know how to send through props
 //here we just destructured user=props.user
@@ -14,10 +16,15 @@ import Component_4 from './Component_4'
 const Component_1 = () => {
 
 const [user, setUser]=useState({id:101 ,name:"hasan"})
-  return (
-    <div>
-      <Component_2 user={user}></Component_2>
-    </div>
+const [text, setText]=useState("hello I am text")
+ 
+return (
+    //pass value as object thats why double {}
+    //after passing or wrapping it here we can access this value on 
+    //each of dependent child directly
+    <UserContext.Provider value={{user, text}}>
+      <Component_2 ></Component_2>
+    </UserContext.Provider>
   )
 }
 
