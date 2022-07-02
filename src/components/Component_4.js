@@ -1,17 +1,11 @@
-import React,{useContext} from 'react'
-import { UserContext } from './UseerContext'
-const Component_4 = () => {
-    const {user,text} =useContext(UserContext)
-    console.log(user)
-    console.log(text)
+import React from 'react'
 
+const Component_4 = () => {
   return (
     <div>
-    <h3>{user.name}</h3>
-    <h3>{user.id}</h3>
-    <h3>{text}</h3>
+        <h1>I am Component_4</h1>
 
-
+      
     </div>
   )
 }
