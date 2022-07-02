@@ -16,8 +16,12 @@ const Component_2 = (props) => {
 }
 
 Component_2.propTypes={
-  name:propTypes.string,
+  user_Name: propTypes.shape({
+
+    name:propTypes.string,
   id:propTypes.number
+  })
+  
 }
 
 // Component_2.defaultProps={
