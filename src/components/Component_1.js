@@ -1,6 +1,5 @@
-import React ,{useState} from 'react'
-import Component_2 from './Component_2'
-import { UserContext } from './UseerContext'
+import React from 'react'
+
 
 
 
@@ -15,16 +14,39 @@ import { UserContext } from './UseerContext'
 
 const Component_1 = () => {
 
-const [user, setUser]=useState({id:101 ,name:"hasan"})
-const [text, setText]=useState("hello I am text")
+
  
 return (
     //pass value as object thats why double {}
     //after passing or wrapping it here we can access this value on 
     //each of dependent child directly
-    <UserContext.Provider value={{user, text}}>
-      <Component_2 ></Component_2>
-    </UserContext.Provider>
+    <>
+    <div>
+    <h1>Welcome to my travelling vlog</h1>
+    <div className='block'>
+    <h3 className='header'>My sajek tour during summer</h3>
+        <small>Author :<span class ="author">mahmudul Hasan</span> </small>
+        <p>Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.</p>
+    </div>
+    </div>
+
+    <div>
+    <div className='block'>
+    <h3 className='header'>My coxbazar tour during summer</h3>
+        <small>Author :<span class ="author">Atik Hasan</span> </small>
+        <p>Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.
+        Sajek valley located at rangmati can amaze you with her cloudy beauty. Find all the detail information about sajek valley tour & cheapest sajek tour.</p>
+    </div>
+    </div>
+
+    </>
+
+
   )
 }
 
