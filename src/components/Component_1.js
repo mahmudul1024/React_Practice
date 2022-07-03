@@ -1,14 +1,29 @@
-import React, { useState } from 'react'
-import Component_2 from './Component_2'
-const Component_1 = () => {
+import React from 'react'
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
+import About from './About'
+import Home from './Home'
+import Eroor from './Eroor'
 
-  const [user ,setName]=useState({id:1400 ,name:"Hasan"})
- 
+
+//add those link on browser
+// http://localhost:3000/Home
+//http://localhost:3000/About
+
+
+const Component_1 = () => {
   return (
     <div>
-    <Component_2 user_Name={user} > </Component_2>
-    
-      
+     <BrowserRouter>
+      <Routes>
+      <Route path= "/Home"  element={<Home/>}></Route>
+      <Route path= "/About"  element={<About/>}></Route>
+      <Route path= "*"  element={<Eroor/>}></Route>
+
+
+      </Routes>
+     </BrowserRouter>
+
+
     </div>
   )
 }
