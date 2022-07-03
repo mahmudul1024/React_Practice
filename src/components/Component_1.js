@@ -4,6 +4,7 @@ import About from './About'
 import Home from './Home'
 import Eroor from './Eroor'
 import Navbar from './Navbar'
+import Blogs from './Blogs'
 
 //add those link on browser
 // http://localhost:3000/Home
@@ -19,6 +20,7 @@ const Component_1 = () => {
       <Routes>
       <Route path= "/Home"  element={<Home/>}></Route>
       <Route path= "/About"  element={<About/>}></Route>
+      <Route path="/Blogs" element={<Blogs/>}></Route>
       <Route path= "*"  element={<Eroor/>}></Route>
 
 

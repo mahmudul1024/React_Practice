@@ -4,11 +4,12 @@ import Component_1 from './components/Component_1'
 
 
 
-
-function App() {
+function App() 
+{
 
   return (
     < div>
+    
     <Component_1></Component_1>
     
     </div>
