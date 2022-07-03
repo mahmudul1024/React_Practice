@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import { Blogs_Data } from './BlogsData'
-
+import { Blogs_Data } from './Blogs_Data.js'
+import { Link } from 'react-router-dom'
 
 const Blogs = () => {
     const [blogs, setData]=useState(Blogs_Data)
@@ -24,8 +24,9 @@ const Blogs = () => {
             <h3>{title}</h3>
             <p>{truncateString(body,100)}</p>
             
-        {/* <Link to={title}>More</Link> */}
-            </article>
+            <Link to={title}  > More </Link>
+        
+            </article >
         })}
       </section>
 
